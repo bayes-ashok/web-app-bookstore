@@ -52,23 +52,6 @@ public List<Item> searchByName(@PathVariable("itemName") String itemName) {
 }
     @PutMapping("/update/{id}")
     public ResponseEntity<String>updateItem(@PathVariable("id") Integer id, @RequestBody ItemPojo updatedItemPojo) {
-//        Optional<Item> optionalItem = itemService.findById(id);
-//        if (optionalItem.isPresent()) {
-//            Item existingItem = optionalItem.get();
-//            existingItem.setItemName(itemPojo.getItemName());
-//            existingItem.setItemDescription(itemPojo.getItemDescription());
-//            existingItem.setItemCategory(itemPojo.getItemCategory());
-//            existingItem.setItemQuantity(itemPojo.getItemQuantity());
-//            existingItem.setItemPerPrice(itemPojo.getItemPerPrice());
-//            // You may need to handle image updates here as well
-//
-//            // Save the updated item
-//            itemService.saveItem(existingItem);
-////
-//            return ResponseEntity.ok("Item updated successfully");
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
         try {
             itemService.updateItem(id, updatedItemPojo);
             return new ResponseEntity<>("Item updated successfully", HttpStatus.OK);

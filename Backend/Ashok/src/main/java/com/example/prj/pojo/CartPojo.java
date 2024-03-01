@@ -17,14 +17,3 @@ public class CartPojo {
     private Integer userId;
 
 }
-
-//    @NotEmpty
-//    private String itemName;
-//    @NotEmpty
-//    private String itemCategory;
-//    @NotNull
-//    private Integer itemPerPrice;
-//    @NotNull
-//    private Integer itemDescription;
-//    @NotNull
-//    private Integer itemPerPrice;

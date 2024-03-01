@@ -35,7 +35,7 @@ public class LoginController {
             if (PasswordEncoderUtil.getInstance().matches(password, user.getPassword())) {
 
 
-                return ResponseEntity.ok("Login successful" ); // You can return a token here
+                return ResponseEntity.ok("Login successful" );
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
             }

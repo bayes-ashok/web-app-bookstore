@@ -23,12 +23,3 @@ public class Cart {
     private User user;
 }
 
-
-
-//    private String itemImage;
-//    private String itemName;
-//    @Column(name="color", nullable = false, length = 255)
-//    private String itemDescription;
-//    @Column(name="size", nullable = false, length = 255)
-//    private String itemPerPrice;
-//    private String itemCategory;

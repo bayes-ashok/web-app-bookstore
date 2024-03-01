@@ -57,20 +57,6 @@ public class ItemServiceImpl implements ItemService {
 
     }
 
-//        if (itemPojo.getItemImage() != null) {
-//            MultipartFile imageFile = itemPojo.getItemImage();
-//            String originalFilename = imageFile.getOriginalFilename();
-//            if (originalFilename != null && !originalFilename.isEmpty()) {
-//                StringBuilder fileNames = new StringBuilder();
-//                Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, originalFilename);
-//                fileNames.append(originalFilename);
-//                Files.write(fileNameAndPath, imageFile.getBytes());
-//                item.setItemImage(originalFilename);
-//            }
-//        }
-//
-//        itemRepository.save(item);
-//    }
 
     @Override
     public List<Item> findAll() {
@@ -91,15 +77,7 @@ public class ItemServiceImpl implements ItemService {
     public void deleteById(Integer id) {
            itemRepository.deleteById(id);
     }
-//    @Override
-//    public List<Item> searchByName(String itemName) {
-//        List<Item> items = itemRepository.findByItemNameIgnoreCase(itemName);
-//        items = items.stream().map(item -> {
-//            item.setItemImage(imageToBase64.getImageBase64("/itemImage/" + item.getItemImage()));
-//            return item;
-//        }).collect(Collectors.toList());
-//        return items;
-//    }
+
 @Override
 public List<Item> searchByName(String itemName) {
     List<Item> items = itemRepository.findByItemNameIgnoreCaseContaining(itemName);
@@ -121,7 +99,6 @@ public List<Item> searchByName(String itemName) {
             // Save the updated item
             itemRepository.save(item);
         } else {
-//            throw new ItemNotFoundException("Item not found with id: " + id);
         }
     }
 }

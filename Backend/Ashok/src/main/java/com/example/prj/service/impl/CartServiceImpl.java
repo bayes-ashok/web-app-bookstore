@@ -44,7 +44,6 @@ public class CartServiceImpl implements CartService {
     @Override
     public List<Cart> findAll() {
         return cartRepository.findAll().stream().map(item -> {
-//            item.setItemImage(imageToBase64.getImageBase64("/itemImage/" + item.getItem().getItemImage()));
             return item;
         }).collect(Collectors.toList());
     }
@@ -52,7 +51,6 @@ public class CartServiceImpl implements CartService {
     public List<Cart> findByUserId(Integer userId) {
         List<Cart> cartList = cartRepository.findByUserId(userId);
         return cartList.stream().map(item -> {
-//            item.setItemImage(imageToBase64.getImageBase64("/itemImage/" + item.getItem().getItemImage()));
             return item;
         }).collect(Collectors.toList());
     }
